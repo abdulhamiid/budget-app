@@ -1,9 +1,10 @@
-<h1>New entity</h1>
+<h1><%= @group.name %></h1>
+<p>New transaction</p>
 
 <%= render "form", entity: @entity %>
 
 <br>
 
 <div>
-  <%= link_to "Back to entities", group_entities_path %>
+  <%= link_to "Back", group_path(@group) %>
 </div>

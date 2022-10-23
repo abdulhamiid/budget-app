@@ -1,9 +1,18 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @group %>
+<h2>
+  <strong>Total: $</strong><%=@group.entities.sum('amount') %>
+</h2>
+<h3>Transactions</h3>
+<div id="entities">
+  <% @group.entities.each do |entity| %>
+    <%= render entity %> 
+  <% end %>
+</div>
 
 <div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
-  <%= button_to "Destroy this group", @group, method: :delete %>
+  <%= link_to "Back", groups_path %>
+  <%= link_to "Add new transaction", new_group_entity_path(@group) %>
+  <%= button_to "Delete Category", @group, method: :delete %>
 </div>

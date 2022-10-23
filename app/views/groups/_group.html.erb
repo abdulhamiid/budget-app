@@ -1,17 +1,8 @@
 <div id="<%= dom_id group %>">
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
-
+  <h1><%= link_to group.name, group %></h1>
   <p>
     <strong>Icon:</strong>
     <%= group.icon %>
   </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
-
 </div>
+
