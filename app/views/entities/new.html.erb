@@ -1,4 +1,4 @@
-<h1><%= @group.name %></h1>
+<h1>Category: <%= @group.name %></h1>
 <p>New transaction</p>
 
 <%= render "form", entity: @entity %>
@@ -6,5 +6,5 @@
 <br>
 
 <div>
-  <%= link_to "Back", group_path(@group) %>
+  <%= link_to "Back", group_path(@group), class: 'btn btn-danger' %>
 </div>

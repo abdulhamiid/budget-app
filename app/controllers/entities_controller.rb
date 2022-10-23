@@ -1,5 +1,5 @@
 class EntitiesController < ApplicationController
-  before_action :set_entity, only: %i[ show edit update destroy ]
+  before_action :set_entity, only: %i[ show destroy ]
 
   # GET /entities or /entities.json
   def index
@@ -31,23 +31,10 @@ class EntitiesController < ApplicationController
 
     respond_to do |format|
       if @entity.save
-        format.html { redirect_to group_path(@entity.group_id), notice: "Entity was successfully created." }
+        format.html { redirect_to group_path(@entity.group_id), notice: "Transaction was successfully created." }
         format.json { render :show, status: :created, location: @entity }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @entity.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /entities/1 or /entities/1.json
-  def update
-    respond_to do |format|
-      if @entity.update(entity_params)
-        format.html { redirect_to entity_url(@entity), notice: "Entity was successfully updated." }
-        format.json { render :show, status: :ok, location: @entity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @entity.errors, status: :unprocessable_entity }
       end
     end
@@ -58,7 +45,7 @@ class EntitiesController < ApplicationController
     @entity.destroy
 
     respond_to do |format|
-      format.html { redirect_to entities_url, notice: "Entity was successfully destroyed." }
+      format.html { redirect_to entities_url, notice: "Transaction was successfully destroyed." }
       format.json { head :no_content }
     end
   end
