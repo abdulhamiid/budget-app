@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :groups
-  resources :entities
+  resources :groups do
+    resources :entities
+  end
   devise_for :users
 
   devise_scope :user do 
