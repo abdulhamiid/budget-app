@@ -1,11 +1,18 @@
-<div id="<%= dom_id entity %>">
-  <p>
-    <strong>Name:</strong>
-    <%= entity.name %>
-  </p>
-
-  <p>
-    <strong>Amount: $</strong><%= entity.amount %>
-  </p>
-
+<div id="<%= dom_id entity %>" class="d-flex justify-content-around" >
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Amount $</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @group.entities.each do |entity| %>
+        <tr>
+          <td><%= entity.name %></td>
+          <td>$<%= entity.amount %>.00</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
