@@ -1,10 +1,35 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>CATEGORIES</h1>
-<div id="groups">
-  <% @groups.each do |group| %>
-    <%= render group %>
-  <% end %>
+<div id="mcv">
+  <div class="p-3 mb-2 bg-primary text-white d-flex align-items justify-content-between">
+    <i id="menu" class="bi bi-list fs-1"></i>
+    <p>CATEGORIES</p>
+    <i class="bi bi-search fs-4"></i>
+  </div>
+  <div>
+    <p style="color: green"><%= notice %></p>
+    <div id="groups" class="container" %>
+      <% @groups.each do |group| %>
+        <%= link_to group, class: "text-decoration-none text-secondary" do %>
+          <%= render group %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="p-3 mt-5 bg-success">
+    <%= link_to "ADD NEW CATEGORY", new_group_path, class: "d-block p-3 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
+  </div>
 </div>
-<i class="bi bi-list"></i><i class="bi bi-search"></i><i class="bi bi-x"></i><i class="bi bi-arrow-left-short"></i>
-<%= link_to "Add a new category", new_group_path %>
+
+<div id="toggle-bar" class="hidden">
+  <div class="text-white p-4">
+    <div class="d-flex justify-content-end col">
+      <i id="bi-cls" class="bi bi-x fs-1"></i>
+    </div>
+    <div class="d-flex flex-column">
+      <%= link_to 'Home', groups_path, class: "text-decoration-none my-2 text-white" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "my-2 text-white" %>
+      <% else %><% end %>
+    </div>
+  </div>
+</div>
+

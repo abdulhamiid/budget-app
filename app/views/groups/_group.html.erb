@@ -1,8 +1,12 @@
-<div id="<%= dom_id group %>">
-  <h1><%= link_to group.name, group %></h1>
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
+<div id="<%= dom_id group %>" class="d-flex justify-content-between my-3 p-2 border border-light border-2 shadow-sm bg-body">
+  <div class="d-flex justify-content-center align-items-center">
+    <img src="<%= group.icon %>", width="70", height="70">
+    <div class="mx-3">
+      <h6><%= group.name %></h6>
+      <p><%= group.created_at.strftime("%Y-%m-%d") %></p>
+    </div>
+  </div>
+  <div>
+    <p>$ <%= group.entities.sum('amount') %></p>
+  </div>
 </div>
-
