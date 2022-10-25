@@ -1,10 +1,13 @@
-<h1>Category: <%= @group.name %></h1>
-<p>New transaction</p>
-
-<%= render "form", entity: @entity %>
-
-<br>
-
 <div>
-  <%= link_to "Back", group_path(@group), class: 'btn btn-danger' %>
+  <div class="p-3 mb-2 bg-primary text-white d-flex align-items-center justify-content-between">
+    <%= link_to group_path(@group) do %>
+      <i class="bi bi-arrow-left-short fs-4 text-white"></i>
+    <% end %>
+    <%= @group.name %>
+    <img src="<%= @group.icon %>" class="rounded-circle", width="50", height="50">
+  </div>
+  <div class="container">
+    <h3 class="text-center m-4">New transaction</h3>
+    <%= render "form", entity: @entity %>
+  </div>
 </div>
