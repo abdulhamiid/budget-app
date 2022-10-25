@@ -1,18 +1,47 @@
-<p style="color: green"><%= notice %></p>
+<div class="text-center">
+  <div class="p-3 mb-2 bg-primary text-white d-flex align-items-center justify-content-between">
+    <%= link_to groups_path do %>
+      <i class="bi bi-arrow-left-short fs-4 text-white"></i>
+    <% end %>
+    <%= @group.name %>
+    <strong>Total: $<%=@group.entities.sum('amount') %></strong>
+  </div>
 
-<%= render @group %>
-<h2>
-  <strong>Total: $</strong><%=@group.entities.sum('amount') %>
-</h2>
-<h3>Transactions</h3>
-<div id="entities">
-  <% @group.entities.each do |entity| %>
-    <%= render entity %> 
-  <% end %>
+  <p style="color: green"><%= notice %></p>
+
+  <div class="container">
+    <h3 class="text-center m-4">Transactions</h3>
+    <div id="entities">
+        <div class="d-flex justify-content-between align-items-center text-start" >
+          <% if @group.recent_transactions.length === 0 %>
+            <p> No transaction made</p>
+          <% else %>
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Amount $</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @group.recent_transactions.each do |entity| %>
+                  <tr class="my-4">
+                    <td><%= entity.name %></td>
+                    <td>$<%= entity.amount %>.00</td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="p-2 mt-5 bg-success">
+      <%= link_to "Add a new transaction", new_group_entity_path(@group), class: "d-block p-2 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
+    </div>
+    <%= button_to "Delete Category", @group, method: :delete, class: "btn btn-danger m-4" %>
+  </div>
 </div>
 
-<div>
-  <%= link_to "Back", groups_path %>
-  <%= link_to "Add new transaction", new_group_entity_path(@group) %>
-  <%= button_to "Delete Category", @group, method: :delete %>
-</div>
