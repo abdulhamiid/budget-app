@@ -1,9 +1,12 @@
-<h1>New category</h1>
-
-<%= render "form", group: @group %>
-
-<br>
-
 <div>
-  <%= link_to "Back to groups", groups_path %>
+  <div class="p-3 mb-2 bg-primary text-white d-flex align-items-center justify-content-between">
+    <%= link_to groups_path do %>
+      <i class="bi bi-arrow-left-short fs-4 text-white"></i>
+    <% end %>
+    <%= @group.name %>
+  </div>
+  <div class="container">
+    <h3 class="text-center m-4">New category</h3>
+    <%= render "form", group: @group %>
+  </div>
 </div>
