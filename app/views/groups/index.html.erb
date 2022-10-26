@@ -1,9 +1,10 @@
 <div id="mcv">
-  <div class="p-3 mb-2 bg-primary text-white d-flex align-items justify-content-between">
-    <i id="menu" class="bi bi-list fs-1"></i>
-    <p>CATEGORIES</p>
-    <i class="bi bi-search fs-4"></i>
-  </div>
+  <ul class="list-inline mb-2 bg-primary text-white d-flex align-items-center justify-content-between p-3">
+    <li class="list-inline-item"><i id="menu" class="bi bi-list fs-3"></i></li>
+    <li class="list-inline-item">Category</li>
+    <li class="list-inline-item"><i class="bi bi-search fs-5"></i></li> 
+  </ul>   
+
   <div>
     <p style="color: green"><%= notice %></p>
     <div id="groups" class="container" %>
@@ -14,6 +15,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="p-3 mt-5 bg-success">
     <%= link_to "ADD NEW CATEGORY", new_group_path, class: "d-block p-3 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
   </div>
