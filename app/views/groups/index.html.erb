@@ -1,0 +1,35 @@
+<div id="mcv">
+  <div class="p-3 mb-2 bg-primary text-white d-flex align-items justify-content-between">
+    <i id="menu" class="bi bi-list fs-1"></i>
+    <p>CATEGORIES</p>
+    <i class="bi bi-search fs-4"></i>
+  </div>
+  <div>
+    <p style="color: green"><%= notice %></p>
+    <div id="groups" class="container" %>
+      <% @groups.each do |group| %>
+        <%= link_to group, class: "text-decoration-none text-secondary" do %>
+          <%= render group %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="p-3 mt-5 bg-success">
+    <%= link_to "ADD NEW CATEGORY", new_group_path, class: "d-block p-3 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
+  </div>
+</div>
+
+<div id="toggle-bar" class="hidden">
+  <div class="text-white p-4">
+    <div class="d-flex justify-content-end col">
+      <i id="bi-cls" class="bi bi-x fs-1"></i>
+    </div>
+    <div class="d-flex flex-column">
+      <h4><%= current_user.name %></h4>
+      <% if user_signed_in? %>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "my-2 text-white" %>
+      <% else %><% end %>
+    </div>
+  </div>
+</div>
+
