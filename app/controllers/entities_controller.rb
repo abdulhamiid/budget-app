@@ -2,10 +2,7 @@ class EntitiesController < ApplicationController
   before_action :set_entity, only: %i[show destroy]
 
   # GET /entities or /entities.json
-  def index
-    @group = Group.find(params[:group_id])
-    @entities = @group.entities.all
-  end
+  def index; end
 
   # GET /entities/1 or /entities/1.json
   def show; end
@@ -43,7 +40,7 @@ class EntitiesController < ApplicationController
     @entity.destroy
 
     respond_to do |format|
-      format.html { redirect_to entities_url, notice: 'Transaction was successfully destroyed.' }
+      format.html { redirect_to group_url, notice: 'Transaction was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
