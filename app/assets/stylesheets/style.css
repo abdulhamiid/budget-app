@@ -42,7 +42,7 @@ body {
   visibility: hidden;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
@@ -65,10 +65,10 @@ body {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-#category > form > div:last-child input {
-  margin: 0;
-}
-
 #category > form input:focus {
   outline: none;
+}
+
+#category > form > div:last-child input {
+  margin: 0;
 }
