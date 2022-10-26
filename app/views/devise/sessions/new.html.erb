@@ -1,26 +1,19 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="container lh-lg">
+  <h2 class="my-4 text-center">Log in</h2>
+  <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= f.email_field :email, label_as_placeholder: true, autofocus: true, autocomplete: "email" %>
+    <%= f.password_field :password, label_as_placeholder: true, autocomplete: "email" %>
+    <div class="d-flex justify-content-between">
+      <% if devise_mapping.rememberable? %>
+        <%= f.check_box :remember_me %>
+      <% end %>
+      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "fs-6" %>
+      <% end %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Log in", class: "btn btn-success col-12 mb-3" %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%= link_to "Sign up", new_registration_path(resource_name) %>
+</div>

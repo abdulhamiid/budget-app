@@ -1,7 +1,7 @@
 <div class="text-center">
   <div class="p-3 mb-2 bg-primary text-white d-flex align-items-center justify-content-between">
     <%= link_to groups_path do %>
-      <i class="bi bi-arrow-left-short fs-4 text-white"></i>
+      <i class="bi bi-arrow-left-short fs-2 text-white"></i>
     <% end %>
     <%= @group.name %>
     <strong>Total: $<%=@group.entities.sum('amount') %></strong>
