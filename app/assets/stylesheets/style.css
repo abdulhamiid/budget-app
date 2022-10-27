@@ -103,3 +103,9 @@ body {
 .title {
   font-size: 2.6rem !important;
 }
+
+.arrow {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
