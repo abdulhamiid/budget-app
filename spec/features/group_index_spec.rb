@@ -4,6 +4,7 @@ RSpec.describe 'groups/index', type: :feature do
     @user = User.create(name: 'user1', email: "#{DateTime.now.to_i}@gmail.com", password: 'password', password_confirmation: 'password')
     
     visit new_user_session_path
+
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
     click_button 'Log in'
