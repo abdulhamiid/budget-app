@@ -93,7 +93,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Thanks to Microverse
-- [The Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/)
+- [The Creative Commons license](https://creativecommons.org/licenses/by-nc/4.0/)
 - Design Template by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 ## 📝 License
