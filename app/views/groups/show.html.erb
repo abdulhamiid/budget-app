@@ -23,14 +23,14 @@
                 <h3><%= entity.name %></h3>
                 <p><i class="bi bi-calendar3 me-2"></i><%= entity.created_at.strftime("%Y-%m-%d") %>
                 <p>TOTAL PAYMENT:<span class="text-dark fw-bold"> $<%= entity.amount %>.00</span></p>
-                <p><%= button_to "Delete", group_entity_path(@group, entity), method: :delete, class: "btn btn-danger" %></p>
+                <p><%= button_to "Delete", group_entity_path(@group, entity), method: :delete, class: "btn btn-danger btn-sm" %></p>
               </div>
             <% end %>
           <% end %>
         </div>
     </div>
     <div>
-    
+
     <div class="p-2 mt-5 bg-success">
       <%= link_to "Add a new transaction", new_group_entity_path(@group), class: "d-block p-2 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
     </div>
