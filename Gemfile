@@ -72,9 +72,10 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'bullet'
 gem 'bootstrap', '~> 5.2.2'
 gem 'bootstrap_form', '~> 5.1'
 gem 'devise'
 gem 'jquery-rails'
-gem "bullet"gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'rubocop', '>= 1.0', '< 2.0'
 
