@@ -3,7 +3,7 @@
   <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= f.email_field :email, label_as_placeholder: true, autofocus: true, autocomplete: "email" %>
     <%= f.password_field :password, label_as_placeholder: true, autocomplete: "email" %>
-    <div class="d-flex justify-content-between">
+    <div>
       <% if devise_mapping.rememberable? %>
         <%= f.check_box :remember_me %>
       <% end %>
@@ -12,7 +12,7 @@
       <% end %>
     </div>
     <div class="actions">
-      <%= f.submit "Log in", class: "btn btn-success col-12 mb-3" %>
+      <%= f.submit "Log in", class: "btn btn-success col-12 my-3" %>
     </div>
   <% end %>
   <%= link_to "Sign up", new_registration_path(resource_name) %>
