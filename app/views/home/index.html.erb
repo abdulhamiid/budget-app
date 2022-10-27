@@ -1,0 +1,17 @@
+<div class="row d-flex flex-column homepage m-0">
+  <div>
+    <h1 class="fw-bold fs-1 text-white text-center title">QOBUS</h1>
+      <% if current_user %>
+        <div class="mt-5">
+          <%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-primary bg-blue btn-sm col-5' %>
+        </div>
+      <% else %>
+        <div class="mt-3 text-center">
+          <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary bg-blue btn-sm container col-12' %>
+        </div>
+        <div class="mt-3 text-center">
+          <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary bg-blue btn-sm  container col-12' %>
+        </div>
+      <% end %>
+  </div>
+</div>
