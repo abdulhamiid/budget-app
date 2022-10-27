@@ -23,18 +23,3 @@
     <%= link_to "ADD NEW CATEGORY", new_group_path, class: "d-block p-3 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
   </div>
 </div>
-
-<div id="toggle-bar" class="hidden">
-  <div class="text-white p-4">
-    <div class="d-flex justify-content-end col">
-      <i id="bi-cls" class="bi bi-x fs-1"></i>
-    </div>
-    <div class="d-flex flex-column">
-      <h4><%= current_user.name %></h4>
-      <% if user_signed_in? %>
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "my-2 text-white" %>
-      <% else %><% end %>
-    </div>
-  </div>
-</div>
-
