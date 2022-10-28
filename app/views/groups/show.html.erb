@@ -1,0 +1,40 @@
+<div class="text-center">
+  <header class="p-3 bg-primary text-white d-flex align-items-start justify-content-between">
+    <%= link_to groups_path do %>
+      <i class="bi bi-arrow-left fs-2 text-white"></i>
+    <% end %>
+  </header>
+
+  <div class="d-flex align-items-center justify-content-between bg-light border shadow-sm bg-bodycol-12 p-3">
+    <p class="text-secondary mb-0"><%= @group.name %></p>
+    <p class="fw-bold mb-0">$ <%= @group.entities.sum('amount') %></p>
+  </div>
+  <p style="color: green"><%= notice %></p>
+
+  <main class="container">
+    <h3 class="text-center m-4">Transactions</h3>
+    <div id="entities">
+        <div class="text-secondary">
+          <% if @group.recent_transactions.length === 0 %>
+            <p>Empty</p>
+          <% else %>
+            <% @group.recent_transactions.each do |entity| %>
+              <div class="d-flex flex-column bg-light border shadow-sm bg-body justify-content-between my-3 col-12 p-4 text-start" >
+                <h3><%= entity.name %></h3>
+                <p><i class="bi bi-calendar3 me-2"></i><%= entity.created_at.strftime("%Y-%m-%d") %>
+                <p>TOTAL PAYMENT:<span class="text-dark fw-bold"> $<%= entity.amount %>.00</span></p>
+                <p><%= button_to "Delete", group_entity_path(@group, entity), method: :delete, class: "btn btn-danger btn-sm" %></p>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+    <div>
+
+    <div class="p-2 mt-5 bg-success">
+      <%= link_to "Add a new transaction", new_group_entity_path(@group), class: "d-block p-2 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
+    </div>
+    <%= button_to "Delete Category", @group, method: :delete, class: "btn btn-danger m-4" %>
+    </div>
+  </main>
+</div>
