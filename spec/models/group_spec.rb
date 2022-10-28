@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   before :each do
-    @user = User.new(name: 'adio', email: 'adio@email.com' , password: '123456t')
-    @category = Group.new(name: 'Food', user_id: @user.id, icon: Rack::Test::UploadedFile.new('spec/support/test_image.jpg'))
+    @user = User.new(name: 'adio', email: 'adio@email.com', password: '123456t')
+    @category = Group.new(name: 'Food', user_id: @user.id,
+                          icon: Rack::Test::UploadedFile.new('spec/support/test_image.jpg'))
   end
 
   before { subject.save }

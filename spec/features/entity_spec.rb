@@ -1,9 +1,11 @@
 require 'rails_helper'
 RSpec.describe Entity, type: :feature do
   before :each do
-    @user = User.create(name: 'user1', email: "#{DateTime.now.to_i}@gmail.com", password: 'password', password_confirmation: 'password')
-    @group = Group.create(name: 'Food', user_id: @user.id, icon: Rack::Test::UploadedFile.new('spec/support/test_image.jpg'))
-    
+    @user = User.create(name: 'user1', email: "#{DateTime.now.to_i}@gmail.com", password: 'password',
+                        password_confirmation: 'password')
+    @group = Group.create(name: 'Food', user_id: @user.id,
+                          icon: Rack::Test::UploadedFile.new('spec/support/test_image.jpg'))
+
     visit new_user_session_path
     fill_in 'Email', with: @user.email
     fill_in 'Password', with: @user.password
@@ -43,6 +45,5 @@ RSpec.describe Entity, type: :feature do
       click_button('Save', exact: true)
       expect(page).to have_current_path(groups_path)
     end
-
   end
 end

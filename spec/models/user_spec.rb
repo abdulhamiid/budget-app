@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Group, type: :model do
   before :each do
@@ -18,7 +18,7 @@ RSpec.describe Group, type: :model do
   end
 
   it 'name should not exceed 25 characters' do
-    @user.name = "Lorem Ipsumsimply dummydolor sit"
+    @user.name = 'Lorem Ipsumsimply dummydolor sit'
     expect(subject).to_not be_valid
   end
 
@@ -31,5 +31,4 @@ RSpec.describe Group, type: :model do
     @user.email = ''
     expect(subject).to_not be_valid
   end
-
 end

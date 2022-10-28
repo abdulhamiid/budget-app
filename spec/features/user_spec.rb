@@ -17,6 +17,5 @@ RSpec.describe 'Index page', type: :feature do
       visit new_user_session_path
       expect(page).to have_content('Remember me')
     end
-    
   end
 end

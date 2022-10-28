@@ -1,8 +1,9 @@
 require 'rails_helper'
 RSpec.describe 'groups/index', type: :feature do
   before :each do
-    @user = User.create(name: 'user1', email: "#{DateTime.now.to_i}@gmail.com", password: 'password', password_confirmation: 'password')
-    
+    @user = User.create(name: 'user1', email: "#{DateTime.now.to_i}@gmail.com", password: 'password',
+                        password_confirmation: 'password')
+
     visit new_user_session_path
 
     fill_in 'Email', with: @user.email
@@ -49,6 +50,5 @@ RSpec.describe 'groups/index', type: :feature do
       click_button('Save', exact: true)
       expect(page).to have_current_path(groups_path)
     end
-
   end
 end
