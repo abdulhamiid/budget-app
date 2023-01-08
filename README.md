@@ -17,7 +17,7 @@
 - Bootstrap 5
 
 ### Live Demo
-🔥 [Link](https://budget-full-app.herokuapp.com/) 🔥
+🔥 [Link](https://budget-r83g.onrender.com) 🔥
 
 ## Getting Started
 
