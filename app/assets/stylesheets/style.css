@@ -5,6 +5,11 @@ body {
   color: #fff;
 }
 
+.container {
+  width: 100%;
+  padding: 6px;
+}
+
 a {
   color: #fff;
 }
@@ -53,7 +58,12 @@ a {
 
 form {
   margin: 60px auto;
-  width: 40%
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+form a {
+  font-size: 0.8rem;
 }
 
 #category > form input {
@@ -152,4 +162,12 @@ form {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  form {
+    margin: 60px auto;
+    width: 40%
+  }
+  
 }
