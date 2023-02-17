@@ -1,7 +1,12 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 body {
-  background-color: #f4f4f4;
+  background-color: #87ba4f;
+  color: #fff;
+}
+
+a {
+  color: #fff;
 }
 
 .bg-success {
@@ -44,6 +49,11 @@ body {
 
 .hide {
   display: none;
+}
+
+form {
+  margin: 60px auto;
+  width: 40%
 }
 
 #category > form input {
@@ -108,4 +118,38 @@ body {
   position: fixed;
   top: 10px;
   left: 10px;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+.avatar {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px dashed #fff;
+}
+
+.ahs {
+  color: red;
+  /* linear gradient color */
+}
+
+         
+.btn-secondary {
+  background-image: linear-gradient(to right, #7baa49 0%, #001510  51%, #587d38  100%);
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-secondary:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
