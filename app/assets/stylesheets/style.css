@@ -11,6 +11,10 @@ body {
   padding-top: 20px
 }
 
+.f-xs {
+  font-size: 10px;
+}
+
 .bg-success {
   background-color: #60b625 !important;
 }
