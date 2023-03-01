@@ -8,7 +8,7 @@ body {
 .container {
   width: 100%;
   padding: 6px;
-  padding-top: 20px
+  padding-top: 20px;
 }
 
 .f-xs {
@@ -65,7 +65,7 @@ form {
 }
 
 form a {
-  font-size: 0.8rem;  
+  font-size: 0.8rem;
 }
 
 #category > form input {
@@ -145,25 +145,6 @@ form a {
 
 .ahs {
   color: red;
-  /* linear gradient color */
-}
-
-         
-.btn-secondary {
-  background-image: linear-gradient(to right, #7baa49 0%, #001510  51%, #587d38  100%);
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  border-radius: 10px;
-  display: block;
-}
-
-.btn-secondary:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
 }
 
 .showcase-img {
@@ -175,8 +156,6 @@ form a {
 @media screen and (min-width: 768px) {
   form {
     margin: 60px auto;
-    width: 40%
+    width: 40%;
   }
-  
 }
-
