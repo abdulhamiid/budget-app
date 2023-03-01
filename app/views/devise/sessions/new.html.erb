@@ -1,24 +1,16 @@
 <div class="container lh-lg">
-  <h2 class="my-4 text-center">Log in</h2>
-  <div class="imgcontainer">
-     <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
+  <%= image_tag "phase_budgeting-jumbo.png", class: "showcase-img" %>
+  <h2 class="my-2 text-start fw-bolder">Log in</h2>
   <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <%= f.email_field :email, label_as_placeholder: true, autofocus: true, autocomplete: "email" %>
     <%= f.password_field :password, label_as_placeholder: true, autocomplete: "email" %>
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+        <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-primary text-end fw-bold text-decoration-none" %>
+    <% end %>
     <div class="actions">
-      <%= f.submit "Log in", class: "btn btn-success col-12 mb-3" %>
+      <%= f.submit "Log in", class: "btn btn-primary col-12 my-2" %>
     </div>
-    <div class="d-flex justify-content-between"">
-      <% if devise_mapping.rememberable? %>
-        <%= f.check_box :remember_me %>
-      <% end %>
-      <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-        <%= link_to "Forgot your password?", new_password_path(resource_name), class: "fs-6" %>
-      <% end %>
-    </div>
-    <p><span class="ash">Not a member?</span> <%= link_to "Create Account", new_registration_path(resource_name) %> </p>
+    <p class="text-center mt-3"><span class="text-secondary">Not a member? </span class=""><%= link_to "Register", new_registration_path(resource_name), class: "text-primary fw-bold text-decoration-none" %> </p>
 
   <% end %>
 </div>

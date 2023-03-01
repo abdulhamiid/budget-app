@@ -1,17 +1,14 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 body {
-  background-color: #87ba4f;
-  color: #fff;
+  background-color: #fff;
+  color: #212529;
 }
 
 .container {
   width: 100%;
   padding: 6px;
-}
-
-a {
-  color: #fff;
+  padding-top: 20px
 }
 
 .bg-success {
@@ -24,6 +21,7 @@ a {
 
 .bi-list:hover,
 #menu,
+.bi-box-arrow-left,
 #bi-cls {
   cursor: pointer;
 }
@@ -57,13 +55,13 @@ a {
 }
 
 form {
-  margin: 60px auto;
+  margin: 30px auto;
   width: 100%;
   font-size: 0.8rem;
 }
 
 form a {
-  font-size: 0.8rem;
+  font-size: 0.8rem;  
 }
 
 #category > form input {
@@ -164,6 +162,12 @@ form a {
   text-decoration: none;
 }
 
+.showcase-img {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 768px) {
   form {
     margin: 60px auto;
@@ -171,3 +175,4 @@ form a {
   }
   
 }
+
