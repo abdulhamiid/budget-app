@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <% if notice.present? %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= alert %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
