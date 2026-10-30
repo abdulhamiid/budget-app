@@ -11,38 +11,37 @@
   </head>
 
   <body>
+    <% if notice.present? %>
+      <div class="bamtee-alert bamtee-alert-success alert fade show" role="alert">
+        <i class="bi bi-check-circle-fill"></i>
+        <span><%= notice %></span>
 
-<% if notice.present? %>
-  <div class="bamtee-alert bamtee-alert-success alert fade show" role="alert">
-    <i class="bi bi-check-circle-fill"></i>
-    <span><%= notice %></span>
+        <button type="button"
+                class="bamtee-alert-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+    <% end %>
 
-    <button type="button"
-            class="bamtee-alert-close"
-            data-bs-dismiss="alert"
-            aria-label="Close">
-      <i class="bi bi-x-lg"></i>
-    </button>
-  </div>
-<% end %>
+    <% if alert.present? %>
+      <div id="bamtee-error-alert"
+          class="bamtee-alert bamtee-alert-danger alert fade show"
+          role="alert">
 
-<% if alert.present? %>
-  <div id="bamtee-error-alert"
-       class="bamtee-alert bamtee-alert-danger alert fade show"
-       role="alert">
+        <i class="bi bi-exclamation-circle-fill"></i>
+        <span><%= alert %></span>
 
-    <i class="bi bi-exclamation-circle-fill"></i>
-    <span><%= alert %></span>
+        <button type="button"
+                class="bamtee-alert-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
 
-    <button type="button"
-            class="bamtee-alert-close"
-            data-bs-dismiss="alert"
-            aria-label="Close">
-      <i class="bi bi-x-lg"></i>
-    </button>
-
-  </div>
-<% end %>
+      </div>
+    <% end %>
 
     <%= yield %>
   </body>
