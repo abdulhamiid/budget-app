@@ -17,7 +17,7 @@
 - Bootstrap 5
 
 ### Live Demo
-🔥 [Link](https://budget-r83g.onrender.com) 🔥
+- Not available
 
 ## Getting Started
 
