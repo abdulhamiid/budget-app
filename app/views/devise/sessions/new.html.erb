@@ -1,16 +1,99 @@
-<div class="container lh-lg">
-  <%= image_tag "access-control-login.avif", class: "showcase-img" %>
-  <h2 class="my-2 text-start fw-bolder">Log in</h2>
-  <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.email_field :email, label_as_placeholder: true, autofocus: true, autocomplete: "email" %>
-    <%= f.password_field :password, label_as_placeholder: true, autocomplete: "email" %>
-    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-        <%= link_to "Forgot password?", new_password_path(resource_name), class: "text-primary text-end fw-bold text-decoration-none" %>
-    <% end %>
-    <div class="actions">
-      <%= f.submit "Log in", class: "btn btn-primary col-12 my-2" %>
-    </div>
-    <p class="text-center mt-3"><span class="text-secondary">Not a member? </span class=""><%= link_to "Register", new_registration_path(resource_name), class: "text-primary fw-bold text-decoration-none" %> </p>
 
-  <% end %>
+<div class="login-page">
+  <div class="login-top-bar">
+    <%= link_to root_path, class: "login-brand" do %>
+      <span class="login-brand-icon">
+        <i class="bi bi-wallet2"></i>
+      </span>
+      <span>BamTee</span>
+    <% end %>
+
+    <%= link_to new_user_registration_path, class: "login-top-link" do %>
+      Create account
+      <i class="bi bi-arrow-up-right"></i>
+    <% end %>
+  </div>
+
+  <main class="login-content">
+    <div class="login-card">
+      <div class="login-card-icon">
+        <i class="bi bi-person-check"></i>
+      </div>
+
+      <p class="login-eyebrow">WELCOME BACK</p>
+      <h1 class="login-title">Log in to <span>BamTee</span></h1>
+      <p class="login-subtitle">
+        Welcome back! Sign in to manage your finances.
+      </p>
+
+      <% if resource.errors.any? %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+      <% end %>
+
+      <%= bootstrap_form_for(
+        resource,
+        as: resource_name,
+        url: session_path(resource_name),
+        data: { turbo: false },
+        html: { class: "login-form" }
+      ) do |f| %>
+
+        <%= f.email_field :email,
+            label: "Email address",
+            placeholder: "you@example.com",
+            autofocus: true,
+            autocomplete: "email",
+            required: true %>
+
+        <%= f.password_field :password,
+            label: "Password",
+            placeholder: "Enter your password",
+            autocomplete: "current-password",
+            required: true %>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="login-form-options">
+            <%= f.check_box :remember_me, label: "Remember me" %>
+
+            <% if devise_mapping.recoverable? %>
+              <%= link_to "Forgot password?",
+                  new_password_path(resource_name),
+                  class: "login-forgot-link" %>
+            <% end %>
+          </div>
+        <% elsif devise_mapping.recoverable? %>
+          <div class="login-forgot-only">
+            <%= link_to "Forgot password?",
+                new_password_path(resource_name),
+                class: "login-forgot-link" %>
+          </div>
+        <% end %>
+
+        <div class="login-actions">
+          <%= f.submit "Log In",
+              class: "login-submit-btn" %>
+        </div>
+      <% end %>
+
+      <div class="login-divider">
+        <span>NEW TO BAMTEE?</span>
+      </div>
+
+      <p class="login-register-text">
+        Don't have an account?
+        <%= link_to "Create one",
+            new_registration_path(resource_name),
+            class: "login-register-link" %>
+      </p>
+    </div>
+
+    <p class="login-security-note">
+      <i class="bi bi-shield-check"></i>
+      Your financial journey, organized in one place.
+    </p>
+  </main>
+
+  <footer class="login-footer">
+    Simple. Organized. In control.
+  </footer>
 </div>

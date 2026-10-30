@@ -1,17 +1,81 @@
-<%= render "devise/shared/error_messages", resource: resource %>
-<div class="container mt-3">
-  <%= image_tag "businesswoman-speaking.avif", class: "showcase-img" %>
-  <h2 class="text-start fw-bolder">Sign up</h2>
-  <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>
-    <%= f.email_field :email, label_as_placeholder: true, autofocus: true, autocomplete: "email" %>
-    <%= f.text_field :name, autocomplete: "name", label_as_placeholder: true, placeholder: "Full name" %>
-    <%= f.password_field :password, label_as_placeholder: true, help: 'At least six characters long' %>
-    <%= f.password_field :password_confirmation, label_as_placeholder: true, autocomplete: "new-password" %>
-    <div class="actions">
-      <%= f.submit "Continue", class: "btn btn-primary col-12 mb-2" %>
-    </div>
-    <p class="text-center mt-3"><span class="text-secondary">Already have an account? </span class=""><%= link_to "Log in", new_session_path(resource_name), class: "text-primary fw-bold text-decoration-none" %></p>
-  <% end %>
-  <p style="color: green">
+<div class="signup-page">
+  <header class="signup-top-bar">
+    <%= link_to root_path, class: "signup-brand" do %>
+      <i class="bi bi-leaf-fill"></i>
+      <span>BamTee</span>
+    <% end %>
+
+    <p class="signup-top-text">
+      Already a member?
+      <%= link_to "Log in", new_session_path(resource_name) %>
+    </p>
+  </header>
+
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <main class="signup-content">
+    <section class="signup-card">
+      <div class="signup-card-icon">
+        <i class="bi bi-person-plus-fill"></i>
+      </div>
+
+      <h1>Create your account</h1>
+      <p class="signup-subtitle">
+        Join BamTee and get started today.
+      </p>
+
+      <%= bootstrap_form_for(
+        resource,
+        as: resource_name,
+        url: registration_path(resource_name),
+        data: { turbo: false },
+        html: { class: "signup-form" }
+      ) do |f| %>
+
+        <%= f.text_field :name,
+          label_as_placeholder: true,
+          placeholder: "Full name",
+          autocomplete: "name",
+          required: true %>
+
+        <%= f.email_field :email,
+          label_as_placeholder: true,
+          placeholder: "Email address",
+          autofocus: true,
+          autocomplete: "email",
+          required: true %>
+
+        <%= f.password_field :password,
+          label_as_placeholder: true,
+          placeholder: "Password",
+          autocomplete: "new-password",
+          help: "At least six characters long",
+          required: true %>
+
+        <%= f.password_field :password_confirmation,
+          label_as_placeholder: true,
+          placeholder: "Confirm password",
+          autocomplete: "new-password",
+          required: true %>
+
+        <div class="signup-actions">
+          <%= f.submit "Create account",
+            class: "signup-submit-btn" %>
+        </div>
+      <% end %>
+
+      <div class="signup-divider">
+        <span>Already have an account?</span>
+      </div>
+
+      <p class="signup-login-link">
+        <%= link_to "Log in to your account",
+          new_session_path(resource_name) %>
+      </p>
+    </section>
+
+    <p class="signup-footer">
+      &copy; <%= Date.current.year %> BamTee. All rights reserved.
+    </p>
+  </main>
 </div>

@@ -1,0 +1,149 @@
+/* New Transaction Page */
+
+.new-transaction-page {
+  min-height: 100vh;
+  background: #f4f8f5;
+  padding-bottom: 50px;
+  color: #173d2b;
+}
+
+/* Header */
+.new-transaction-header {
+  background: #103d2b;
+  color: #fff;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 5px 20px rgba(16, 61, 43, 0.12);
+}
+
+.new-transaction-header span {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.new-transaction-back {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
+  color: #fff;
+  font-size: 1.35rem;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.new-transaction-back:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #a8e6bd;
+  transform: translateX(-3px);
+}
+
+/* Group information */
+.new-transaction-group {
+  background: #fff;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-bottom: 1px solid #e2ebe5;
+}
+
+.new-transaction-group-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #e7f5eb;
+  color: #17633e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.new-transaction-group small {
+  color: #87938b;
+  font-size: 12px;
+}
+
+.new-transaction-group h6 {
+  margin: 4px 0 0;
+  color: #103d2b;
+  font-weight: 800;
+}
+
+/* Main content */
+.new-transaction-content {
+  width: 100%;
+  max-width: 680px;
+  margin: 45px auto;
+  padding: 0 18px;
+}
+
+.new-transaction-card {
+  background: #fff;
+  padding: 38px;
+  border: 1px solid #e2ebe5;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(16, 61, 43, 0.06);
+}
+
+/* Form heading */
+.new-transaction-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.new-transaction-form-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 17px;
+  background: #e7f5eb;
+  color: #17633e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin: 0 auto 16px;
+}
+
+.new-transaction-heading h3 {
+  color: #103d2b;
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.new-transaction-heading p {
+  color: #87938b;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .new-transaction-header {
+    padding: 15px 18px;
+  }
+
+  .new-transaction-group {
+    padding: 16px 20px;
+  }
+
+  .new-transaction-content {
+    margin: 25px auto;
+  }
+
+  .new-transaction-card {
+    padding: 25px 18px;
+    border-radius: 16px;
+  }
+
+  .new-transaction-heading h3 {
+    font-size: 20px;
+  }
+}

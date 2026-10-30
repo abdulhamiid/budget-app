@@ -1,24 +1,73 @@
-<div id="mcv">
-  <ul class="list-inline mb-2 bg-primary text-white d-flex align-items-center justify-content-between p-3">
-    <li class="list-inline-item"><%= link_to root_path do %>
-      <i id="menu" class="bi bi-list fs-3 text-white"></i>
-      <% end %> 
-    </li>
-    <li class="list-inline-item">Category</li>
-    <li class="list-inline-item"><i class="bi bi-box-arrow-left fs-6"></i></li> 
-  </ul>   
+<div id="mcv" class="category-page">
+  <header class="category-header">
+    <div class="category-header-inner">
+      <%= link_to root_path, class: "category-menu-btn",
+          aria: { label: "Go to home page" } do %>
+        <i class="bi bi-list"></i>
+      <% end %>
 
-  <div>
-    <div id="groups" class="container" %>
-      <% @groups.each do |group| %>
-        <%= link_to group, class: "text-decoration-none text-secondary" do %>
-          <%= render group %>
-        <% end %>
+      <div class="category-heading">
+        <span class="category-eyebrow">ORGANIZE YOUR CONTENT</span>
+        <h1>Categories</h1>
+      </div>
+
+      <%= link_to destroy_user_session_path,
+          data: { turbo_method: :delete },
+          class: "category-logout-btn",
+          aria: { label: "Log out" } do %>
+        <i class="bi bi-box-arrow-right"></i>
       <% end %>
     </div>
-  </div>
+  </header>
 
-  <div class="p-3 mt-5 bg-success">
-    <%= link_to "ADD NEW CATEGORY", new_group_path, class: "d-block p-3 bg-success text-white text-white text-decoration-none text-center border border-white rounded-1" %>
-  </div>
+  <main class="category-main">
+    <div class="category-intro">
+      <div>
+        <h2>Your categories</h2>
+        <p>Browse and manage your categories below.</p>
+      </div>
+
+      <span class="category-count">
+        <i class="bi bi-grid-fill"></i>
+        <%= @groups.size %>
+      </span>
+    </div>
+
+    <section id="groups" class="category-grid">
+      <% @groups.each do |group| %>
+        <%= link_to group, class: "category-card" do %>
+
+          <div class="category-card-content">
+            <%= render group %>
+          </div>
+
+        <% end %>
+      <% end %>
+
+      <% if @groups.empty? %>
+        <div class="category-empty">
+          <div class="category-empty-icon">
+            <i class="bi bi-folder-plus"></i>
+          </div>
+          <h3>No categories yet</h3>
+          <p>Create your first category to get started.</p>
+        </div>
+      <% end %>
+    </section>
+
+    <div class="category-add-section">
+      <%= link_to new_group_path, class: "category-add-btn" do %>
+        <i class="bi bi-plus-lg"></i>
+        <span>Add New Category</span>
+        <i class="bi bi-arrow-right category-add-arrow"></i>
+      <% end %>
+    </div>
+  </main>
+
+  <footer class="category-footer">
+    <i class="bi bi-leaf-fill"></i>
+    <span>BamTee</span>
+    <span class="category-footer-dot">·</span>
+    <span>Organize with ease</span>
+  </footer>
 </div>

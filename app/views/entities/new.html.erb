@@ -1,15 +1,43 @@
-<div>
-  <div class="p-3 bg-primary text-white d-flex align-items-center justify-content-between">
-    <%= link_to group_path(@group) do %>
-      <i class="bi bi-arrow-left fs-4 text-white"></i>
+<div class="new-transaction-page">
+
+  <!-- Header -->
+  <div class="new-transaction-header">
+    <%= link_to group_path(@group), class: "new-transaction-back" do %>
+      <i class="bi bi-arrow-left"></i>
     <% end %>
+
+    <span>New Transaction</span>
+    <div></div>
   </div>
 
-  <div class="d-flex align-items-center justify-content-start bg-light border shadow-sm bg-body col-12 p-3">
-    <p class="text-secondary mb-0"><%= @group.name %></p>
+  <!-- Group information -->
+  <div class="new-transaction-group">
+    <div class="new-transaction-group-icon">
+      <i class="bi bi-wallet2"></i>
+    </div>
+
+    <div>
+      <small>Adding transaction to</small>
+      <h6><%= @group.name %></h6>
+    </div>
   </div>
-  <div class="container">
-    <h3 class="text-center m-4">New transaction</h3>
-    <%= render "form", entity: @entity %>
+
+  <!-- Form -->
+  <div class="new-transaction-content">
+    <div class="new-transaction-card">
+
+      <div class="new-transaction-heading">
+        <div class="new-transaction-form-icon">
+          <i class="bi bi-plus-circle"></i>
+        </div>
+
+        <h3>Create a transaction</h3>
+        <p>Record and keep track of your spending.</p>
+      </div>
+
+      <%= render "form", entity: @entity %>
+
+    </div>
   </div>
+
 </div>
