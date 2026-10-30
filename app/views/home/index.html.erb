@@ -1,23 +1,86 @@
-<div class="row d-flex flex-column homepage m-0">
-  <div>
+
+<div class="home-page">
+  <div class="home-top-bar">
     <% if current_user %>
-        <header class="arrow">
-          <%= link_to groups_path do %>
-            <i class="bi bi-arrow-left fs-5 text-white"></i>
-          <% end %>
-        </header>
-      <div class="mt-5">
-        <h1 class="fw-bold fs-1 text-white text-center title m-4"><%= current_user.name %></h1>
-        <%= link_to 'Sign Out', destroy_user_session_path, class: 'btn btn-primary bg-blue btn-sm col-5' %>
-      </div>
+      <%= link_to groups_path, class: "home-back-btn", aria: { label: "Back to categories" } do %>
+        <i class="bi bi-arrow-left"></i>
+      <% end %>
     <% else %>
-      <h1 class="fw-bold fs-1 text-white text-center title">BamTee</h1>
-      <div class="mt-3 text-center">
-        <%= link_to 'Sign In', new_user_session_path, class: 'btn btn-primary bg-blue btn-sm container col-12' %>
-      </div>
-      <div class="mt-3 text-center">
-        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary bg-blue btn-sm  container col-12' %>
+      <div class="home-brand">
+        <i class="bi bi-wallet2"></i>
+        <span>BamTee</span>
       </div>
     <% end %>
   </div>
+
+  <main class="home-content">
+    <% if current_user %>
+      <div class="home-welcome-icon">
+        <i class="bi bi-person-check-fill"></i>
+      </div>
+
+      <p class="home-eyebrow">YOUR FINANCES, SIMPLIFIED</p>
+
+      <h1 class="home-title">
+        Welcome back,
+        <span><%= current_user.name %>!</span>
+      </h1>
+
+      <p class="home-description">
+        Ready to manage your money? Keep track of your transactions
+        and stay in control of your spending.
+      </p>
+
+      <div class="home-actions">
+        <%= link_to groups_path, class: "home-primary-btn" do %>
+          View My Categories
+          <i class="bi bi-arrow-right"></i>
+        <% end %>
+
+        <%= button_to destroy_user_session_path,
+            method: :delete,
+            class: "home-secondary-btn" do %>
+          <i class="bi bi-box-arrow-right"></i>
+          Sign Out
+        <% end %>
+      </div>
+
+    <% else %>
+      <div class="home-hero-icon">
+        <i class="bi bi-wallet2"></i>
+      </div>
+
+      <p class="home-eyebrow">SMARTER MONEY MANAGEMENT</p>
+
+      <h1 class="home-title">
+        Welcome to <span>BamTee</span>
+      </h1>
+
+      <p class="home-description">
+        Take control of your finances. Organize your expenses,
+        track your transactions, and make every penny count.
+      </p>
+
+      <div class="home-actions">
+        <%= link_to new_user_session_path, class: "home-primary-btn" do %>
+          Sign In
+          <i class="bi bi-arrow-right"></i>
+        <% end %>
+
+        <%= link_to new_user_registration_path, class: "home-secondary-btn" do %>
+          <i class="bi bi-person-plus"></i>
+          Create an Account
+        <% end %>
+      </div>
+
+      <p class="home-footer-text">
+        Simple. Organized. In control.
+      </p>
+    <% end %>
+  </main>
+
+  <footer class="home-footer">
+    <i class="bi bi-shield-check"></i>
+    <span>Your journey to better money habits starts here.</span>
+  </footer>
 </div>
