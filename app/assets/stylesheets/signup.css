@@ -47,6 +47,12 @@
   text-decoration: none;
 }
 
+.signup-login-link a {
+  color: #17633e;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .signup-top-text a:hover,
 .signup-login-link a:hover {
   color: #2f8b5b;
@@ -112,9 +118,10 @@
   background-color: #fbfdfb;
   color: #173d2b;
   box-shadow: none;
-  transition: border-color 0.2s ease,
-              box-shadow 0.2s ease,
-              background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .signup-form .form-control:focus {
@@ -155,9 +162,10 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .signup-submit-btn:hover {
@@ -194,12 +202,6 @@
 .signup-login-link {
   margin: 0;
   text-align: center;
-}
-
-.signup-login-link a {
-  color: #17633e;
-  font-weight: 700;
-  text-decoration: none;
 }
 
 /* Footer */

@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 13px;
   color: #fff;
   font-size: 1.35rem;
@@ -38,7 +38,7 @@
 }
 
 .new-transaction-back:hover {
-  background: rgba(255,255,255,0.12);
+  background: rgba(255, 255, 255, 0.12);
   color: #a8e6bd;
   transform: translateX(-3px);
 }

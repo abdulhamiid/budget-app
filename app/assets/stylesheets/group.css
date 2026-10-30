@@ -136,9 +136,10 @@
   color: #173d2b;
   text-decoration: none;
   box-shadow: 0 5px 18px rgba(16, 61, 43, 0.035);
-  transition: transform 0.22s ease,
-              box-shadow 0.22s ease,
-              border-color 0.22s ease;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
 }
 
 .category-card:hover {
@@ -255,9 +256,14 @@
   text-align: center;
   text-decoration: none;
   box-shadow: 0 8px 20px rgba(23, 99, 62, 0.16);
-  transition: background 0.2s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.category-footer i {
+  color: #39865a;
 }
 
 .category-add-btn > i:first-child {
@@ -286,10 +292,6 @@
   gap: 8px;
   color: #89968d;
   font-size: 0.85rem;
-}
-
-.category-footer i {
-  color: #39865a;
 }
 
 .category-footer-dot {

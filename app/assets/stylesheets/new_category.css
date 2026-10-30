@@ -135,8 +135,9 @@
   background: #fbfdfb;
   color: #173d2b;
   box-shadow: none;
-  transition: border-color 0.2s ease,
-              box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .new-category-card form .form-control:focus {
@@ -162,9 +163,10 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .new-category-card form input[type="submit"]:hover,

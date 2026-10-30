@@ -116,7 +116,6 @@
 .login-title {
   margin: 0 0 12px;
   color: #193d2b;
-  font-size: clamp(27px, 5vw, 34px);
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -1px;
@@ -155,7 +154,9 @@
   border-radius: 11px;
   box-shadow: none;
   font-size: 14px;
-  transition: border-color 0.2s, box-shadow 0.2s,
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
     background 0.2s;
 }
 
@@ -200,7 +201,6 @@
   width: 15px;
   height: 15px;
   margin: 0;
-  accent-color: #218253;
 }
 
 .login-forgot-link {
@@ -238,7 +238,9 @@
   font-size: 14px;
   font-weight: 800;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s,
+  transition:
+    background 0.2s,
+    transform 0.2s,
     box-shadow 0.2s;
 }
 

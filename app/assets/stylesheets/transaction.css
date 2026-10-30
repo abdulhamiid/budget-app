@@ -187,9 +187,10 @@
   border-radius: 18px;
   background: #fff;
   box-shadow: 0 5px 18px rgba(16, 61, 43, 0.035);
-  transition: transform 0.2s ease,
-              box-shadow 0.2s ease,
-              border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .transaction-card:hover {

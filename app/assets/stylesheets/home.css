@@ -140,7 +140,6 @@
 
 .home-title {
   margin: 0 auto 20px;
-  font-size: clamp(34px, 6vw, 57px);
   font-weight: 800;
   line-height: 1.15;
   letter-spacing: -1.8px;
@@ -295,7 +294,6 @@
   }
 
   .home-title {
-    font-size: clamp(32px, 9vw, 43px);
     letter-spacing: -1px;
   }
 
