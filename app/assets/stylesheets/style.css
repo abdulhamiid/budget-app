@@ -1,7 +1,7 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
 body {
-  background-color: #fff;
+  background-color: #f4f8f5;
   color: #212529;
 }
 
@@ -153,3 +153,82 @@ form a {
   box-sizing: border-box;
 }
 
+/* Flash Messages */
+
+.bamtee-alert {
+  max-width: 1120px;
+  margin: 22px auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(16, 61, 43, 0.04);
+  animation: bamtee-alert-slide 0.3s ease;
+}
+
+.bamtee-alert > i {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.bamtee-alert span {
+  flex: 1;
+}
+
+/* Success message */
+.bamtee-alert-success {
+  background: #eaf7ed;
+  border: 1px solid #cce6d3;
+  color: #17633e;
+}
+
+/* Error message */
+.bamtee-alert-danger {
+  background: #fff1f0;
+  border: 1px solid #f1d0cc;
+  color: #a93630;
+}
+
+/* Close button */
+.bamtee-alert-close {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: inherit;
+  opacity: 0.65;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.bamtee-alert-close:hover {
+  opacity: 1;
+}
+
+/* Animation */
+@keyframes bamtee-alert-slide {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .bamtee-alert {
+    margin: 18px 16px;
+    padding: 14px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+  }
+}
