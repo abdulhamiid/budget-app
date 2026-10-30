@@ -36,17 +36,11 @@
     <section id="groups" class="category-grid">
       <% @groups.each do |group| %>
         <%= link_to group, class: "category-card" do %>
-          <div class="category-card-icon">
-            <i class="bi bi-folder2-open"></i>
-          </div>
 
           <div class="category-card-content">
             <%= render group %>
           </div>
 
-          <div class="category-card-arrow">
-            <i class="bi bi-arrow-up-right"></i>
-          </div>
         <% end %>
       <% end %>
 
