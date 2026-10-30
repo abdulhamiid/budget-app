@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '4.0.7'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 8.1.4'
+gem 'rails', '~> 7.0.4'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -13,7 +13,7 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'puma', '~> 6.0'
+gem 'puma', '~> 5.0'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem 'importmap-rails'
@@ -49,7 +49,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'rspec-rails', '~> 8.0'
+  gem 'rspec-rails', '~> 6.0.0'
 
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
@@ -77,7 +77,6 @@ end
 gem 'bootstrap', '~> 5.2.2'
 gem 'bootstrap_form', '~> 5.1'
 gem 'bullet'
-gem 'devise', '~> 5.0' # Or use git/main if the newest patch is needed
+gem 'devise'
 gem 'jquery-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'
-gem 'fiddle'

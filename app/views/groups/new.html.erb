@@ -1,43 +1,12 @@
-<div class="new-category-page">
-  <header class="new-category-header">
-    <%= link_to groups_path,
-        class: "new-category-back",
-        aria: { label: "Back to categories" } do %>
-      <i class="bi bi-arrow-left"></i>
+<div>
+  <div class="p-3 mb-2 bg-primary text-white d-flex align-items-center justify-content-between">
+    <%= link_to groups_path do %>
+      <i class="bi bi-arrow-left fs-4 text-white"></i>
     <% end %>
-
-    <div class="new-category-header-title">
-      <span> B A M T E E </span>
-      <h1><%= @group.name.presence || "New Category" %></h1>
-    </div>
-
-    <div class="new-category-header-icon">
-      <i class="bi bi-folder-plus"></i>
-    </div>
-  </header>
-
-  <main class="new-category-content">
-    <div class="new-category-card">
-      <div class="new-category-icon">
-        <i class="bi bi-folder-plus"></i>
-      </div>
-
-      <h2>Create a category</h2>
-      <p class="new-category-description">
-        Give your category a name to keep everything organized.
-      </p>
-
-      <%= render "form", group: @group %>
-
-      <%= link_to groups_path, class: "new-category-cancel" do %>
-        <i class="bi bi-arrow-left"></i>
-        Back to categories
-      <% end %>
-    </div>
-
-    <p class="new-category-footer">
-      <i class="bi bi-leaf-fill"></i>
-      Organize with ease
-    </p>
-  </main>
+    <%= @group.name %>
+  </div>
+  <div class="container">
+    <h3 class="text-center m-4">New category</h3>
+    <%= render "form", group: @group %>
+  </div>
 </div>

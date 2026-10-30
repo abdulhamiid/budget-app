@@ -1,56 +1,16 @@
-<%= render "devise/shared/error_messages", resource: resource %>
+<div class="container mt-3 text-center">
+  <%= image_tag "modern-style-vector.webp", class: "showcase-img" %>
+  <h2 class="text-start">Forgot <br>password?</h2>
+  <p class="f-xs text-start"> Don't worry, It happens. Please enter the address associated with your account.</p>
+  <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="forgot-password-page">
-  <div class="forgot-password-card">
-
-    <div class="forgot-password-icon">
-      <i class="bi bi-shield-lock"></i>
+    <div class="field">
+      <%= f.email_field :email,  label_as_placeholder: true, autofocus: true, autocomplete: "email" %>
     </div>
 
-    <div class="forgot-password-heading">
-      <span class="forgot-password-eyebrow">ACCOUNT RECOVERY</span>
-      <h2>Forgot your <span>password?</span></h2>
-      <p>
-        Don't worry, it happens. Enter the email address associated
-        with your account and we'll send you instructions to reset your password.
-      </p>
+    <div class="actions">
+      <%= f.submit "Submit", class: "btn btn-primary col-12"%>
     </div>
-
-    <%= bootstrap_form_for(
-      resource,
-      as: resource_name,
-      url: password_path(resource_name),
-      html: { method: :post, class: "forgot-password-form" }
-    ) do |f| %>
-
-      <%= render "devise/shared/error_messages", resource: resource %>
-
-      <div class="forgot-password-field">
-        <%= f.email_field :email,
-          label: "Email address",
-          placeholder: "you@example.com",
-          label_as_placeholder: false,
-          autofocus: true,
-          autocomplete: "email",
-          class: "forgot-password-input" %>
-      </div>
-
-      <div class="forgot-password-actions">
-        <%= f.submit "Send Reset Instructions",
-          class: "forgot-password-submit" %>
-      </div>
-
-    <% end %>
-
-    <div class="forgot-password-footer">
-      <span>Remembered your password?</span>
-      <%= link_to "Back to login", new_session_path(resource_name) %>
-    </div>
-
-  </div>
-
-  <p class="forgot-password-bottom-text">
-    <i class="bi bi-lock-fill"></i>
-    Your account security matters to us.
-  </p>
+  <% end %>
 </div>

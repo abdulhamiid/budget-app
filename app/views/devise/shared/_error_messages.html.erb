@@ -1,25 +1,14 @@
- <% if resource.errors.any? %>
-  <div id="error_explanation" class="form-error-box" role="alert">
-    <div class="form-error-header">
-      <i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i>
-      <div>
-        <h2>
-          <%= I18n.t(
-            "errors.messages.not_saved",
-            count: resource.errors.count,
-            resource: resource.class.model_name.human.downcase
-          ) %>
-        </h2>
-        <p>Please review the following <% if resource.errors.count == 1 %>issue<% else %>issues<% end %> and try again.</p>
-      </div>
-    </div>
-
-    <ul class="form-error-list">
+<% if resource.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= I18n.t("errors.messages.not_saved",
+                 count: resource.errors.count,
+                 resource: resource.class.model_name.human.downcase)
+       %>
+    </h2>
+    <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li>
-          <i class="bi bi-x-circle-fill" aria-hidden="true"></i>
-          <span><%= message %></span>
-        </li>
+        <li><%= message %></li>
       <% end %>
     </ul>
   </div>

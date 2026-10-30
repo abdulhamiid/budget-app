@@ -1,58 +1,24 @@
-<div class="password-page">
-  <div class="password-card">
-    <div class="password-icon">
-      <i class="bi bi-shield-lock"></i>
-    </div>
+<div class="container pt-3 text-center">
+  <h2>Change your password</h2>
 
-    <h2>Change your password</h2>
-    <p class="password-subtitle">
-      Create a strong password to keep your account secure.
-    </p>
+  <%= bootstrap_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :reset_password_token %>
 
-    <%= bootstrap_form_for(
-      resource,
-      as: resource_name,
-      url: password_path(resource_name),
-      html: { method: :put, class: "password-form" }
-    ) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-      <%= f.hidden_field :reset_password_token %>
-
+    <div class="field">
       <% if @minimum_password_length %>
-        <p class="password-hint">
-          <i class="bi bi-info-circle"></i>
-          Your password must be at least
-          <%= @minimum_password_length %> characters long.
-        </p>
+        <em>(<%= @minimum_password_length %> characters minimum)</em><br />
       <% end %>
-
-      <%= f.password_field :password,
-          autofocus: true,
-          autocomplete: "new-password",
-          label: "New password",
-          placeholder: "Enter your new password",
-          class: "password-input" %>
-
-      <%= f.password_field :password_confirmation,
-          autocomplete: "new-password",
-          label: "Confirm new password",
-          placeholder: "Enter your password again",
-          class: "password-input" %>
-
-      <div class="password-actions">
-        <%= f.submit "Update password",
-            class: "btn password-submit" %>
-      </div>
-    <% end %>
-
-    <div class="password-footer">
-      <i class="bi bi-arrow-left"></i>
-      <%= render "devise/shared/links" %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
     </div>
-  </div>
 
-  <p class="password-security-note">
-    <i class="bi bi-shield-check"></i>
-    Your security matters to us.
-  </p>
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Change my password", class: "btn btn-success" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
 </div>
